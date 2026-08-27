@@ -68,13 +68,13 @@ This section of the process reads the 16-days MOD13Q1 and MYD13Q1 composites in 
 ### 2.4.2 NDVI North America Mosaics
 This section of the process takes the MOD13Q1 and MYD13Q1 NDVI tiles in TIF format and assembles a mosaic for the North America region in the native Sinusoidal projection. Then reprojects and resamples the mosaics.
 * Reprojection and resampling to transform the mosaics from Sinusoidal projection to LAEA projection with 250 meters cell size.
-* Reprojection to LAEA done with ArcGIS using the **Project Raster** tool in ArcGIS.
+* Reprojection to LAEA done with ArcGIS using the **Project Raster** and **Clip Raster** tool in ArcGIS.
 ### 2.4.3 Calculation of NDVI Biweekly layers
 This section merges the 8-days lagged MOD13Q1 and MYD13Q1 NDVI layers into combined biweekly NDVI means. The combined layers are thereafter masked to the North America region, reprojected, and resampled to WGS84, setting the same coordinate reference system and cell size as the ESA-CCI preprocessed biweekly means and the preprocessed terrain parameters.
 * The values in the output biweekly NDVI layers are transformed into meaningful NDVI value ranges (-1 to 1) using a scale factor of 0.0001 (as indicated in the MOD13Q1 and MYD13Q1 documentation).
 * The combined NDVI layers are named MCD13Q1.
 * Crop and mask done with ArcGIS using the **Extract by Mask** tool in ArcGIS.
-* Reprojection to WSGS84 done with ArcGIS using the **Project Raster** tool in ArcGIS.
+* Reprojection to WSGS84 done with ArcGIS using the **Project Raster** and **Clip Raster** tool in ArcGIS.
 ## 2.5 Land Surface Temperature Data Preparation (MOD11A2 and MYD11A2)
 ### 2.5.1 Extraction of LST layers from MODIS HDF files and export to TIF format
 This section of the process reads the 8-days MOD11A2 and MYD11A2 composites in their native HDF format, extracts the layer with the LST information and exports it to TIF format.
@@ -84,12 +84,12 @@ This section of the process reads the 8-days MOD11A2 and MYD11A2 composites in t
 This section of the process takes the MOD11A2 and MYD11A2 LST tiles in TIF format and assembles a mosaic for the North America region in the native Sinusoidal projection. Then reprojects and resamples the mosaics.
 * The values in the output biweekly LST layers are converted to Kelvin degrees using a scale factor of 0.02 (as indicated in the MOD11A2 and MYD11A2 documentation).
 * Reprojection and resampling to transform the mosaics from Sinusoidal projection to LAEA projection with 250 meters cell size.
-* Reprojection to LAEA done with ArcGIS using the **Project Raster** tool in ArcGIS.
+* Reprojection to LAEA done with ArcGIS using the **Project Raster** and **Clip Raster** tool in ArcGIS.
 ### 2.5.3 Calculation of LST Biweekly layers
 This section merges the 8-days MOD11A2 and MYD11A2 LST composites into combined biweekly LST means. The combined layers are thereafter masked to the North America region, reprojected, and resampled to WGS84, setting the same coordinate reference system and cell size as the ESA-CCI preprocessed biweekly means and the preprocessed terrain parameters.
 * The combined LST layers are named MCD11A2.
 * Crop and mask done with ArcGIS using the **Extract by Mask** tool in ArcGIS.
-* Reprojection to WSGS84 done with ArcGIS using the **Project Raster** tool in ArcGIS.
+* Reprojection to WSGS84 done with ArcGIS using the **Project Raster** and **Clip Raster** tool in ArcGIS.
 ## 2.6 Snow Cover Masks Preparation (MOD10A2 and MYD10A2)
 ### 2.6.1 Extraction of Snow Cover layers from MODIS HDF files and export to TIF format
 This section of the process reads the 8-days MOD10A2 and MYD10A2 composites in their native HDF format, extracts the layer with the Snow Cover information and exports it to TIF format.
@@ -101,14 +101,14 @@ This section of the process takes the MOD10A2 and MYD10A2 LST tiles in TIF forma
 
     0=missing data, 1=no decision, 11=night, 25=no snow, 37=lake, 39=ocean, 50=cloud, 100=lake ice, 200=snow, 254=detector saturated, 255=fill
 * Reprojection and resampling to transform the mosaics from Sinusoidal projection to LAEA projection with 250 meters cell size.
-* Reprojection to LAEA done with ArcGIS using the **Project Raster** tool in ArcGIS.
+* Reprojection to LAEA done with ArcGIS using the **Project Raster** and **Clip Raster** tool in ArcGIS.
 ### 2.6.3 Calculation of Snow Cover Biweekly layers
 This section merges the 8-days MOD10A2 and MYD10A2 Snow Cover composites into combined biweekly Snow Cover means. The values in the combined layers are reclassified to assign 0 to snow areas and 1 to the rest of the areas. The combined layers are thereafter masked to the North America region, reprojected, and resampled to WGS84, setting the same coordinate reference system and cell size as the ESA-CCI preprocessed biweekly means and the preprocessed terrain parameters.
 * Snow covered areas are classified as 0
 * All no snow-covered areas are classified as 1
 * The combined Snow Cover layers are named MCD10A2
 * Crop and mask done with ArcGIS using the **Extract by Mask** tool in ArcGIS.
-* Reprojection to WSGS84 done with ArcGIS using the **Project Raster** tool in ArcGIS.
+* Reprojection to WSGS84 done with ArcGIS using the **Project Raster** and **Clip Raster** tool in ArcGIS.
 ## 2.7	ISMN (Ground-Truth) Validation Data
 **Calculation of biweekly soil moisture means from the ISMN**
 
