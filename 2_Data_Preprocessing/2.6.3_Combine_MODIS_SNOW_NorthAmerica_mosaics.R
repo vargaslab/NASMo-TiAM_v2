@@ -29,10 +29,10 @@ setwd("./3_North_America_SM_predictions")
 ##Main
 
 # Get terra and aqua SC files
-MOD10A2_files <- list.files(path = paste0("./1_Preprocessed_data/6_NorthAmerica_MODIS_SNOW/MOD10A2/2_8days_Mosaics_LAEA_250m", s_year),
+MOD10A2_files <- list.files(path = paste0("./1_Preprocessed_data/6_NorthAmerica_MODIS_SNOW/MOD10A2/2_8days_Mosaics_LAEA_250m/", s_year),
                             pattern = ".tif", recursive = TRUE, full.names = TRUE)
 
-MYD10A2_files <- list.files(path = paste0("./1_Preprocessed_data/6_NorthAmerica_MODIS_SNOW/MYD10A2/2_8days_Mosaics_LAEA_250m", s_year),
+MYD10A2_files <- list.files(path = paste0("./1_Preprocessed_data/6_NorthAmerica_MODIS_SNOW/MYD10A2/2_8days_Mosaics_LAEA_250m/", s_year),
                             pattern = ".tif", recursive = TRUE, full.names = TRUE)
 
 # Specify biweeks
