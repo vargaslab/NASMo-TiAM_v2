@@ -28,10 +28,10 @@ setwd("./3_North_America_SM_predictions")
 ##Main
 
 # Get terra and aqua LST files
-MOD11A2_files <- list.files(path = paste0("./1_Preprocessed_data/5_NorthAmerica_MODIS_LST/MOD11A2/2_8days_Mosaics_LAEA_250m", s_year),
+MOD11A2_files <- list.files(path = paste0("./1_Preprocessed_data/5_NorthAmerica_MODIS_LST/MOD11A2/2_8days_Mosaics_LAEA_250m/", s_year),
                             pattern = ".tif", recursive = TRUE, full.names = TRUE)
 
-MYD11A2_files <- list.files(path = paste0("./1_Preprocessed_data/5_NorthAmerica_MODIS_LST/MYD11A2/2_8days_Mosaics_LAEA_250m", s_year),
+MYD11A2_files <- list.files(path = paste0("./1_Preprocessed_data/5_NorthAmerica_MODIS_LST/MYD11A2/2_8days_Mosaics_LAEA_250m/", s_year),
                             pattern = ".tif", recursive = TRUE, full.names = TRUE)
 
 # Specify biweeks
